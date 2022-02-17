@@ -1,6 +1,6 @@
 import React from "react";
 
-function HomePage() {
+function Navigation() {
   return (
     <nav>
       <h3>Logo</h3>
@@ -14,4 +14,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Navigation;
