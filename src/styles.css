@@ -3,6 +3,7 @@
   text-align: center;
 }
 
+/*blue bar*/
 nav {
   display: flex;
   justify-content: space-around;
@@ -12,6 +13,7 @@ nav {
   color: black;
 }
 
+/*hyperlinks*/
 .nav-links {
   width: 40%;
   display: flex;
