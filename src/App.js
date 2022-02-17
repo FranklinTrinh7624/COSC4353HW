@@ -14,18 +14,19 @@ export default function App() {
       <h1>Hello CodeSandbox</h1>
       <h2>Start to seefds nothingheresome magic happen!</h2>
     </div>*/
-    <BrowserRouter>
-      <Routes>
-        <div className="App">
-          <Navigation />
+
+    <div className="App">
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/clientprofile" element={<ClientProfile />} />
           <Route path="/fuelquote" element={<FuelQuote />} />
           <Route path="/loginregistration" element={<LoginRegistration />} />
           <Route path="/fuelquotehistory" element={<FuelQuoteHistory />} />
-        </div>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

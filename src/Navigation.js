@@ -1,14 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navigation() {
   return (
     <nav>
       <h3>Logo</h3>
       <ul className="nav-links">
-        <li>ClientProfile</li>
-        <li>FuelQuote</li>
-        <li>LoginRegistration</li>
-        <li>FuelQuoteHistory</li>
+        <Link to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/clientprofile">
+          <li>ClientProfile</li>
+        </Link>
+        <Link to="/fuelquote">
+          <li>FuelQuote</li>
+        </Link>
+        <Link to="/loginregistration">
+          <li>LoginRegistration</li>
+        </Link>
+        <Link to="/fuelquotehistory">
+          <li>FuelQuoteHistory</li>
+        </Link>
       </ul>
     </nav>
   );
