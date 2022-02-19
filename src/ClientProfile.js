@@ -1,14 +1,12 @@
 import React from "react";
 
-function ClientProfile() {
-  return (
-    <div>
-      <h1>ClientProfile</h1>
-    </div>
-  );
-}
-
-export default ClientProfile;
+const validateForm = (errors) => {
+  let valid = true;
+  Object.values(errors).forEach((val) => {
+    val.length > 0 && (valid = false);
+  });
+  return valid;
+};
 
 class Profile extends React.Component {
   constructor(props) {
@@ -36,10 +34,10 @@ class Profile extends React.Component {
 
   handleChange = (event) => {
     event.preventDefault();
-    const { info, value } = event.target;
+    const { name, value } = event.target;
     let errors = this.state.errors;
 
-    switch (info) {
+    switch (name) {
       case "firstName":
         errors.firstName = value.length > 50 ? "Maximum is 50 characters" : "";
         break;
@@ -70,6 +68,78 @@ class Profile extends React.Component {
       default:
         break;
     }
-    this.setState({ errors, [info]: value }, () => console.log(this.state));
+    this.setState({ errors, [name]: value }, () => console.log(this.state));
   };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    if (validateForm(this.state.errors)) {
+      console.info("Valid Form - Creating Profile");
+    } else {
+      console.error("Invalid Form");
+    }
+  };
+
+  render() {
+    const { errors } = this.state;
+    return (
+      <div className="clientProfile">
+        <div className="form-wrapper">
+          <h1>Client Profile Form </h1>
+          <form onSubmit={this.handleSubmit} noValidate>
+            <div className="firstName">
+              <label>First Name: </label>
+              <input
+                type="text"
+                name="fName"
+                onChange={this.handleChange}
+                noValidate
+              />
+              {errors.firstName.length > 50 && (
+                <span className="errMsg"> {errors.firstName} </span>
+              )}
+            </div>
+            <div className="lastName">
+              <label>Last Name: </label>
+              <input
+                type="text"
+                name="lName"
+                onChange={this.handleChange}
+                noValidate
+              />
+              {errors.lastName.length > 50 && (
+                <span className="errMsg"> {errors.lastName} </span>
+              )}
+            </div>
+            <div className="firstAddress">
+              <label>Address 1: </label>
+              <input
+                type="text"
+                name="address1"
+                onChange={this.handleChange}
+                noValidate
+              />
+              {errors.firstAddress.length > 50 && (
+                <span className="errMsg"> {errors.firstAddress} </span>
+              )}
+            </div>
+            <div className="firstName">
+              <label>First Name: </label>
+              <input
+                type="text"
+                name="fName"
+                onChange={this.handleChange}
+                noValidate
+              />
+              {errors.firstName.length > 50 && (
+                <span className="errMsg"> {errors.firstName} </span>
+              )}
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
 }
+
+export default Profile;
