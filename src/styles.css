@@ -85,3 +85,25 @@ form td:last-child {
 form * {
   font-size: 28px;
 }
+
+.firstName {
+  margin: 15px;
+}
+.lastName {
+  margin: 15px;
+}
+.firstAddress {
+  margin: 15px;
+}
+.secondAddress {
+  margin: 15px;
+}
+.city {
+  margin: 15px;
+}
+.State {
+  margin: 15px;
+}
+.zipcode {
+  margin: 15px;
+}

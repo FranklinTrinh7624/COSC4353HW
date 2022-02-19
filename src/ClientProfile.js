@@ -1,4 +1,5 @@
 import React from "react";
+import Select from "react-dropdown-select";
 
 const validateForm = (errors) => {
   let valid = true;
@@ -95,7 +96,7 @@ class Profile extends React.Component {
                 onChange={this.handleChange}
                 noValidate
               />
-              {errors.firstName.length > 50 && (
+              {errors.firstName.length > 0 && (
                 <span className="errMsg"> {errors.firstName} </span>
               )}
             </div>
@@ -119,21 +120,106 @@ class Profile extends React.Component {
                 onChange={this.handleChange}
                 noValidate
               />
-              {errors.firstAddress.length > 50 && (
+              {errors.firstAddress.length > 100 && (
                 <span className="errMsg"> {errors.firstAddress} </span>
               )}
             </div>
-            <div className="firstName">
-              <label>First Name: </label>
+            <div className="secondAddress">
+              <label>Address 2: </label>
               <input
                 type="text"
-                name="fName"
+                name="address2"
                 onChange={this.handleChange}
                 noValidate
               />
-              {errors.firstName.length > 50 && (
-                <span className="errMsg"> {errors.firstName} </span>
+              {errors.secondAddress.length > 100 && (
+                <span className="errMsg"> {errors.secondAddress} </span>
               )}
+            </div>
+            <div className="city">
+              <label>City: </label>
+              <input
+                type="text"
+                name="city"
+                onChange={this.handleChange}
+                noValidate
+              />
+              {errors.city.length > 100 && (
+                <span className="errMsg"> {errors.city} </span>
+              )}
+            </div>
+            <div className="State">
+              <label>State: </label>
+              <select name="state">
+                <option value="Alabama"> Alabama(AL)</option>
+                <option value="Alaska"> Alaska(AK) </option>
+                <option value="Arizona"> Arizona(AZ)</option>
+                <option value="Arkansas"> Arkansas(AR)</option>
+                <option value="California"> California(CA)</option>
+                <option value="Colorado"> Colorado(CO)</option>
+                <option value="Connecticut"> Connecticut(CT)</option>
+                <option value="Delaware"> Delaware(DE)</option>
+                <option value="Florida"> Florida(FL)</option>
+                <option value="Georgia"> Georgia(GA)</option>
+                <option value="Hawaii"> Hawaii(HI)</option>
+                <option value="Idaho"> Idaho(ID)</option>
+                <option value="Illinois"> Illinois(IL)</option>
+                <option value="Indiana"> Indiana(IN)</option>
+                <option value="Iowa"> Iowa(IA)</option>
+                <option value="Kansas"> Kansas(KS)</option>
+                <option value="Kentuckey"> Kentuckey(KY)</option>
+                <option value="Louisiana"> Louisiana(LA)</option>
+                <option value="Maine"> Maine(ME)</option>
+                <option value="Maryland"> Maryland(MD)</option>
+                <option value="Massachusetts"> Massachusetts(MA)</option>
+                <option value="Michigan"> Michigan(MI)</option>
+                <option value="Minnesota"> Minnesota(MN)</option>
+                <option value="Mississippi"> Mississippi(MS)</option>
+                <option value="Missouri"> Missouri(MO)</option>
+                <option value="Montana"> Montana(MT)</option>
+                <option value="Nebraska"> Nebraska(NE)</option>
+                <option value="Nevada"> Nevada(NV)</option>
+                <option value="New Hampshire"> New Hampshire(NH)</option>
+                <option value="New Jersey"> New Jersey(NJ)</option>
+                <option value="New Mexico"> New Mexico(NM)</option>
+                <option value="New York"> New York(NY)</option>
+                <option value="North Carolina"> North Carolina(NC)</option>
+                <option value="North Dakota"> North Dakota(ND)</option>
+                <option value="Ohio"> Ohio(OH)</option>
+                <option value="Oklahoma"> Oklahoma(OK)</option>
+                <option value="Oregon"> Oregon(OR)</option>
+                <option value="Pennsylvania"> Pennsylvania(PA)</option>
+                <option value="Rhode Island"> Rhode Island(RI)</option>
+                <option value="South Carolina"> South Carolina(SC)</option>
+                <option value="South Dakota"> South Dakota(SD)</option>
+                <option value="Tennessee"> Tennessee(TN)</option>
+                <option value="Texas"> Texas(TX)</option>
+                <option value="Utah"> Utah(UT)</option>
+                <option value="Vermont"> Vermont(VT)</option>
+                <option value="Virginia"> Virginia(VA)</option>
+                <option value="Washington"> Washington(WA)</option>
+                <option value="West Virginia"> West Virginia(WV)</option>
+                <option value="Wisconsin"> Wisconsin(WI)</option>
+                <option value="Wyoming"> Wyoming(WY)</option>
+              </select>
+              {errors.state.length > 0 && (
+                <span className="errMsg"> {errors.state} </span>
+              )}
+            </div>
+            <div className="zipcode">
+              <label>Zipcode: </label>
+              <input
+                type="text"
+                name="zipcode"
+                onChange={this.handleChange}
+                noValidate
+              />
+              {errors.zipcode.length > 5 && (
+                <span className="errMsg"> {errors.zipcode} </span>
+              )}
+            </div>
+            <div className="savebtn">
+              <button>Save</button>
             </div>
           </form>
         </div>
