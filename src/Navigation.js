@@ -9,16 +9,16 @@ function Navigation() {
           <li>Home</li>
         </Link>
         <Link to="/clientprofile">
-          <li>ClientProfile</li>
+          <li>Client Profile</li>
         </Link>
         <Link to="/fuelquote">
-          <li>FuelQuote</li>
+          <li>Fuel Quote</li>
         </Link>
         <Link to="/loginregistration">
-          <li>LoginRegistration</li>
+          <li>Login/Registration</li>
         </Link>
         <Link to="/fuelquotehistory">
-          <li>FuelQuoteHistory</li>
+          <li>Fuel Quote History</li>
         </Link>
       </ul>
     </nav>

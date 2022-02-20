@@ -6,7 +6,7 @@ function LoginRegistration() {
   const [passwordRegister, setPasswordRegister] = useState("");
   return (
     <div>
-      <h1>loginregtexsds</h1>
+      <h1>Login/Registration</h1>
       <div className="LoginRegiApp">
         <form className="login">
           <label>Login</label>
